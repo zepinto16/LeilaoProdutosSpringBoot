@@ -1,9 +1,6 @@
 package com.example.leilao_produtos_spring_boot.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
@@ -15,14 +12,14 @@ import org.antlr.v4.runtime.misc.NotNull;
 @RequiredArgsConstructor
 public class User {
     @Id
-    int id;
+    private int id;
     @NonNull
     String name;
     @NonNull
-    int age;
+    private int age;
     @NonNull
-    String email;
+    private String email;
     @NotNull
-    @Enumerated
-    Gender gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 }
