@@ -4,17 +4,19 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
-@Entity
+@Entity(name = "Leilao_user")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
+
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     @NonNull
-    String name;
+    private String name;
     @NonNull
     private int age;
     @NonNull

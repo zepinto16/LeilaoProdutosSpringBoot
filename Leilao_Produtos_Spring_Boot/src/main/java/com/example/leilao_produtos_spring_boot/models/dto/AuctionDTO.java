@@ -26,6 +26,6 @@ public class AuctionDTO extends RepresentationModel<AuctionDTO> {
 
 
     public static AuctionDTO toAuctionDTO(Auction a) {
-        return new AuctionDTO(a.getId(), a.getName(), a.getDescription(), a.getBiddings());
+        return new AuctionDTO(a.getId(), a.getName(), a.getDescription(), null);
     }
 }

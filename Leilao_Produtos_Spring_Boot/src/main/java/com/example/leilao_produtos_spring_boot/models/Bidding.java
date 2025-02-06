@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @RequiredArgsConstructor
+
 public class Bidding {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -32,4 +33,11 @@ public class Bidding {
     @JoinColumn(name = "auction_id", nullable = false)
     private Auction auction;
 
+    private int itemId;
+
+    public Bidding(BigDecimal bidAmount, LocalDateTime now, User user, Auction auction, int auctionId) {
+    }
+
+
+    //public Bidding(BigDecimal price, LocalDateTime now, User user, Auction auction) {    }
 }

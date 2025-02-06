@@ -24,10 +24,11 @@ public class Auction {
     @NonNull
     private String description;
 
-    @OneToMany(mappedBy = "auction", cascade = CascadeType.ALL)
-    private List<Bidding> biddings;
-
+    @Enumerated(EnumType.STRING)
+    private AuctionStatus status = AuctionStatus.ACTIVE;
 }
+
+
 
 
 

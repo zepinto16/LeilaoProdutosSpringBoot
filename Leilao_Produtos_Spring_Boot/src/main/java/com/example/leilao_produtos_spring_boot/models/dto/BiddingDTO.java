@@ -28,7 +28,7 @@ public class BiddingDTO extends RepresentationModel<BiddingDTO> {
     private Auction auction;
 
 
-    public static BiddingDTO toBiddingDTO(Bidding b){
-        return new BiddingDTO(b.getId(), b.getPrice(), b.getDate(), b.getUser(), b.getAuction());
-}
+//    public static BiddingDTO toBiddingDTO(Bidding b){
+//        return new BiddingDTO(b.getId(), b.getPrice(), b.getDate(), b.getUser(), b.getAuction());
+//}
 }
