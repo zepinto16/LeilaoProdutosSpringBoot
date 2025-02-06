@@ -36,7 +36,7 @@ public class UserService implements UserManagment {
     public User createUser(UserRequestDTO userRequestDTO) {
 
         if (userRequestDTO.getName() == null || userRequestDTO.getName().trim().isEmpty()) {
-            throw new InvalidUserDataException("O nome do usuário não pode estar vazio.");
+            throw new InvalidUserDataException("O nome do user não pode estar vazio.");
         }
 
         if (userRequestDTO.getEmail() == null || !userRequestDTO.getEmail().contains("@")) {
@@ -50,7 +50,7 @@ public class UserService implements UserManagment {
 
         Optional<User> existingUser = userRepository.findByEmail(userRequestDTO.getEmail());
         if (existingUser.isPresent()) {
-            throw new UserAlreadyExistsException("E-mail já cadastrado.");
+            throw new UserAlreadyExistsException("E-mail já registado.");
         }
 
 
@@ -66,7 +66,7 @@ public class UserService implements UserManagment {
      * Atualizar um usuário pelo ID
      */
     public User updateUser(int id, UserRequestDTO userRequestDTO) {
-        User existingUser = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("Usuário não encontrado."));
+        User existingUser = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User não encontrado."));
         existingUser.setName(userRequestDTO.getName());
         existingUser.setAge(userRequestDTO.getAge());
         existingUser.setEmail(userRequestDTO.getEmail());
