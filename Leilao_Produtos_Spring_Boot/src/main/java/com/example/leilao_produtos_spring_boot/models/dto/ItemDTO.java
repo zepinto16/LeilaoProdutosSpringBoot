@@ -8,13 +8,19 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+/**
+ * DTO (Data Transfer Object) para a entidade Item.
+ *
+ * - Utilizado para transferir os dados do item entre a API e o sistema.
+ * - Evita expor diretamente a entidade Item na API.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class ItemDTO {
-    private int id;
-    private String name;
-    private String description;
-    private BigDecimal price;
+    private int id; // Identificador único do item
+    private String name; // Nome do item leiloado
+    private String description; // Descrição do item
+    private BigDecimal price; // Preço inicial do item no leilão
 }
