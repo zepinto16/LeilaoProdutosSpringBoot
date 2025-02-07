@@ -5,6 +5,11 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * Classe que representa um leilão no sistema de leilão.
+ * Utiliza JPA para persistência no banco de dados e Lombok para geração automática de métodos.
+ */
+
 @Entity
 @Getter
 @Setter
@@ -24,6 +29,10 @@ public class Auction {
     @NonNull
     private String description;
 
+    /**
+     * Define o status do leilão.
+     * Pode ser ACTIVE (ativo) ou CLOSED (encerrado).
+     */
     @Enumerated(EnumType.STRING)
     private AuctionStatus status = AuctionStatus.ACTIVE;
 }
