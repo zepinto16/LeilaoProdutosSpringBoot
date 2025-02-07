@@ -4,7 +4,12 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
 
-@Entity(name = "Leilao_user")
+/**
+ * Classe que representa um utilizador no sistema de leilão.
+ * Utiliza JPA para mapeamento da entidade e Lombok para gerar métodos automaticamente.
+ */
+
+@Entity(name = "Leilao_user") // Define que esta classe é uma entidade JPA e será mapeada para a tabela "Leilao_user"
 @Getter
 @Setter
 @NoArgsConstructor
@@ -12,8 +17,8 @@ import org.antlr.v4.runtime.misc.NotNull;
 @RequiredArgsConstructor
 
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id // Define que este campo é a chave primária da tabela
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Faz com que o ID seja gerado automaticamente pelo banco de dados
     private int id;
     @NonNull
     private String name;
