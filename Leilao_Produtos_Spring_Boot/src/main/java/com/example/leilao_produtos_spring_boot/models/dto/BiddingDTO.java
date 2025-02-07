@@ -10,6 +10,13 @@ import org.springframework.hateoas.RepresentationModel;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * DTO (Data Transfer Object) para a entidade Bidding (Licitação/Lance).
+ *
+ * - Utilizado para retornar dados de um lance de forma estruturada na API.
+ * - Evita expor diretamente a entidade Bidding na API.
+ * - Suporta HATEOAS para adicionar links de navegação à resposta da API.
+ */
 @Getter
 @Setter
 @NoArgsConstructor
@@ -17,15 +24,15 @@ import java.time.LocalDateTime;
 
 public class BiddingDTO extends RepresentationModel<BiddingDTO> {
 
-    private int id;
+    private int id; // Identificador da licitação
 
-    private BigDecimal price;
+    private BigDecimal price; // Valor da licitação
 
-    private LocalDateTime date;
+    private LocalDateTime date; // Data e hora da licitação
 
-    private User user;
+    private User user; // Utilizador que fez a licitação
 
-    private Auction auction;
+    private Auction auction; // Leilão onde a licitação foi feito
 
 
 //    public static BiddingDTO toBiddingDTO(Bidding b){
